@@ -17,15 +17,15 @@ const Header = () => {
                     justifyContent: "space-between",
                 }}
             >
-                <Link className="header-logo" to="/">
+                <Link className="header-logo" href="/">
                     <img src={"images/logo.png"} alt="logo" />
                 </Link>
                 <Box className="menu" >
-                    <Link underline="none" color="black" className="menu-item" to="/"> Our Services </Link>
-                    <Link underline="none" color="black" className="menu-item" to="/"> Why Us </Link>
-                    <Link underline="none" color="black" className="menu-item" to="/"> Testimonial </Link>
-                    <Link underline="none" color="black" className="menu-item" to="/"> FAQ </Link>
-                    <Button variant="contained">Register</Button>
+                    <Link underline="none" color="black" className="menu-item" href="/"> Our Services </Link>
+                    <Link underline="none" color="black" className="menu-item" href="/"> Why Us </Link>
+                    <Link underline="none" color="black" className="menu-item" href="/"> Testimonial </Link>
+                    <Link underline="none" color="black" className="menu-item" href="/"> FAQ </Link>
+                    <Button component={Link} variant="contained" href="/login" >Register</Button>
                 </Box>
             </Box>
             <Grid className="hero" container spacing={2}

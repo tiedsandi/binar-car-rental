@@ -1,4 +1,3 @@
-import React from 'react'
 import Header from '../containers/Header'
 import OurService from '../containers/OurService'
 import WhyUs from '../containers/WhyUs'
