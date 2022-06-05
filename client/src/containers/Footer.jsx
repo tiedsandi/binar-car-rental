@@ -1,8 +1,6 @@
-import React from 'react'
-// import Logo from '../components/Logo'
-// import NavLink from '../components/NavLink'
-import { Avatar, Grid, Link, Stack, Typography } from '@mui/material'
+import { Avatar, Grid, Stack, Typography } from '@mui/material'
 import Logo from '../components/Logo'
+import Nav from '../components/Nav'
 
 const Footer = () => {
     return (
@@ -22,10 +20,7 @@ const Footer = () => {
             </Grid>
             <Grid item xs={3}>
                 <Stack direction="column" spacing={1}>
-                    <Link underline="none" color="black" className="menu-item" to="/"> Our Services </Link>
-                    <Link underline="none" color="black" className="menu-item" to="/"> Why Us </Link>
-                    <Link underline="none" color="black" className="menu-item" to="/"> Testimonial </Link>
-                    <Link underline="none" color="black" className="menu-item" to="/"> FAQ </Link>
+                    <Nav />
                 </Stack>
             </Grid>
             <Grid item xs={3}>
