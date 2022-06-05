@@ -1,4 +1,4 @@
-import { Grid, Box, Typography, TextField, Button } from '@mui/material'
+import { Grid, Box, Typography, TextField, Button, Link } from '@mui/material'
 import { useState } from 'react'
 
 const Login = () => {
@@ -86,6 +86,14 @@ const Login = () => {
                         </Box>
                         <Button variant="contained" color="primary" fullWidth onClick={() => handleSubmit()}> Login </Button>
                     </Box>
+
+                    {/* link to register */}
+                    <Box mt={2}>
+                        <Typography variant="body1" color="textSecondary">
+                            Belum punya akun? Silahkan daftar <Link href="/register">disini</Link>
+                        </Typography>
+                    </Box>
+
                 </Box>
             </Grid>
         </Grid>
