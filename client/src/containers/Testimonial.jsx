@@ -91,7 +91,7 @@ const Testimonial = () => {
                     </div>
                 </div>
             </div>
-            {AddLibrary(window.location.origin + '/flickity.pkdg.min.js')}
+            {AddLibrary(window.location.origin + '/js/flickity.pkdg.min.js')}
         </section >
 
     )

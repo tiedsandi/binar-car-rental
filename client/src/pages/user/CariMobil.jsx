@@ -2,6 +2,7 @@ import { Box } from '@mui/material'
 import React from 'react'
 import Hero from '../../components/Hero'
 import Navbar from '../../components/Navbar'
+import ContentCars from '../../containers/ContentCars'
 import Footer from '../../containers/Footer'
 import Search from '../../containers/Search'
 
@@ -19,6 +20,7 @@ const CariMobil = () => {
                 <Hero />
                 <Search />
             </Box>
+            <ContentCars />
             <Footer />
         </>
     )
