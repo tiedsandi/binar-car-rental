@@ -1,5 +1,5 @@
 import { Box } from '@mui/material'
-import { Button, FormControl, Grid, MenuItem, TextField, Typography } from '@mui/material'
+import { Button, MenuItem, TextField, Typography } from '@mui/material'
 const Search = () => {
     return (
         <Box p={2}
@@ -11,13 +11,18 @@ const Search = () => {
                 transform: 'translate(-50%, -50%)',
                 boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
                 borderRadius: '10px',
+                width: '80%',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+
             }}>
-            <FormControl fullWidth>
+            <Box width={"300px"}>
                 <Typography paragraph>Tipe Mesin</Typography>
                 <TextField
                     select
                     defaultValue='semua'
-
+                    size="small"
+                    fullWidth
                 >
                     <MenuItem disabled value="">
                         <em>Pilih Jenis Mesin</em>
@@ -25,14 +30,15 @@ const Search = () => {
                     <MenuItem value={'semua'}>Semua</MenuItem>
 
                 </TextField>
-            </FormControl>
 
-            <FormControl fullWidth>
+            </Box>
+            <Box ml={2} width={"300px"}>
                 <Typography paragraph>Tipe Mobil</Typography>
                 <TextField
                     select
-
                     defaultValue='semua'
+                    size="small"
+                    fullWidth
                 >
                     <MenuItem disabled value="">
                         <em>Pilih Tipe Mobil</em>
@@ -41,14 +47,14 @@ const Search = () => {
                     <MenuItem value={'semua'}>Semua</MenuItem>
 
                 </TextField>
-
-            </FormControl>
-            <FormControl fullWidth>
+            </Box>
+            <Box ml={2} width={"300px"}>
                 <Typography paragraph>Tahun Mobil</Typography>
                 <TextField
                     select
                     defaultValue='semua'
-
+                    size="small"
+                    fullWidth
                 >
                     <MenuItem disabled value="">
                         <em>Pilih Harga Mobil</em>
@@ -57,13 +63,14 @@ const Search = () => {
                     <MenuItem value={'semua'}>Semua</MenuItem>
 
                 </TextField>
-            </FormControl>
-            <FormControl >
+            </Box>
+            <Box ml={2} width={"300px"}>
                 <Typography paragraph>Jumlah Penumpang (optional)</Typography>
                 <TextField
                     select
                     defaultValue='semua'
-
+                    size="small"
+                    fullWidth
                 >
                     <MenuItem disabled value="">
                         <em>Pilih Tipe Mobil</em>
@@ -72,16 +79,12 @@ const Search = () => {
                     <MenuItem value={'semua'}>Semua</MenuItem>
 
                 </TextField>
-            </FormControl>
-            <Button
-                variant="contained"
-                color="success"
-                fullWidth
-                sx={{ position: 'absolute', bottom: '0', height: '3.5rem' }}
-            >
-                <Typography color={'white'} sx={{ fontWeight: 'bold', fontSize: '0.9rem' }}
-                >Cari Mobil</Typography>
-            </Button>
+            </Box>
+            <Box ml={2} pt={4.5}>
+                <Button variant="contained" color="primary" fullWidth >
+                    Cari Mobil
+                </Button>
+            </Box>
         </Box>
     )
 }
