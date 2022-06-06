@@ -6,15 +6,15 @@ import Footer from '../../containers/Footer'
 import Search from '../../containers/Search'
 
 const CariMobil = () => {
-
     return (
         <>
-            <Box sx={{
-                backgroundColor: "#F1F3FF",
-                position: "relative",
-                padding: "1.5rem 6rem",
-                height: "min-content",
-            }}>
+            <Box
+                sx={{
+                    backgroundColor: "#F1F3FF",
+                    position: "relative",
+                    padding: "1.5rem 6rem",
+                    height: "min-content",
+                }}>
                 <Navbar />
                 <Hero />
                 <Search />
