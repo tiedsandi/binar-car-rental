@@ -24,7 +24,7 @@ const Hero = ({ page }) => {
                             <Typography variant="h3" sx={{ fontWeight: "bold", lineHeight: "60px" }}>Sewa & Rental Mobil Terbaik di kawasan (Lokasimu)</Typography>
                             <Typography sx={{ fontSize: "18px", width: "600px", color: "#0f0f0f", margin: "1rem 0" }} >Selamat datang di Binar Car Rental. Kami menyediakan mobil kualitas terbaik dengan harga terjangkau. Selalu siap melayani kebutuhanmu untuk sewa mobil selama 24 jam.</Typography>
                             {page === 'home' ?
-                                <Button variant="contained" sx={{ width: "22%", color: "white" }} color="success" >Mulai Sewa Mobil</Button>
+                                <Button variant="contained" sx={{ width: "22%", color: "white" }} color="success" href={'./cari-mobil'} >Mulai Sewa Mobil</Button>
                                 :
                                 <></>
                             }

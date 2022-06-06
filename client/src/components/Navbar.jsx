@@ -17,7 +17,7 @@ const Navbar = ({ page }) => {
                 {page === 'home' ?
                     <>
                         <Nav />
-                        <Button component={Link} variant="contained" href="/login" color="success" sx={{ color: "white" }}>Register</Button>
+                        <Button component={Link} variant="contained" href="/register" color="success" sx={{ color: "white" }}>Register</Button>
                     </>
                     :
                     <Avatar />

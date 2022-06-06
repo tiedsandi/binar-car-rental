@@ -8,8 +8,8 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 
-const Card = ({ page }) => {
-
+const Card = ({ page, car }) => {
+    console.log(car.image)
     return (
         <>
             {
@@ -17,32 +17,32 @@ const Card = ({ page }) => {
                     <div className="card">
                         <div className="cardHeader">
                             <div className="cardContentImage">
-                                <img className='carImg' src={''} alt="car" />
+                                <img className='carImg' alt="car" src={car.image} />
                             </div>
                         </div>
                         <div className="cardContent">
-                            <Typography mb={.1}> car.name / car.type </Typography>
+                            <Typography mb={.1}> {car.name} / {car.type} </Typography>
                             <Typography mb={1} sx={{
                                 fontSize: '1.2rem',
                                 fontWeight: 'bold',
-                            }}> Rp. car.price / hari </Typography>
-                            <div className="cardDesc">
+                            }}> Rp. {car.price} / hari </Typography>
+                            <div className="cardDesc" >
                                 <Typography variant="caption">
-                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus commodi aut doloremque elit. Accusamus commodi aut doloremque
+                                    {car.description}
                                 </Typography>
                             </div>
                             <div className="cardTime">
                                 <Typography className='time' mb={.5}>
                                     <GroupIcon className='icon-btn' />
-                                    4 orang
+                                    {car.passengers} orang
                                 </Typography>
                                 <Typography className='time' mb={.5}>
                                     <SettingsIcon className='icon-btn' />
-                                    Manual
+                                    {car.engine}
                                 </Typography>
                                 <Typography className='time' mb={.5}>
                                     <CalendarMonthIcon className='icon-btn' />
-                                    Tahun 2020
+                                    Tahun {car.year}
                                 </Typography>
                             </div>
                         </div>
