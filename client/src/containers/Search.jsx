@@ -13,7 +13,7 @@ const Search = () => {
                 backgroundColor: "white",
                 left: '50%',
                 transform: 'translate(-50%, -50%)',
-                boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
+                boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.3)',
                 borderRadius: '10px',
                 width: '80%',
                 alignItems: 'center',
@@ -83,7 +83,7 @@ const Search = () => {
                 </TextField>
             </Box>
             <Box ml={2} pt={4.5}>
-                <Button variant="contained" color="primary" fullWidth onClick={() => dispatch(setShow(false))}>
+                <Button variant="contained" color="success" sx={{ color: "white" }} fullWidth onClick={() => dispatch(setShow(false))}>
                     Cari Mobil
                 </Button>
             </Box>

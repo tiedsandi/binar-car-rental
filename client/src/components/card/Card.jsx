@@ -13,7 +13,7 @@ const Card = ({ page }) => {
     return (
         <>
             {
-                page === 'user ' ? (
+                page === 'user' ? (
                     <div className="card">
                         <div className="cardHeader">
                             <div className="cardContentImage">
@@ -47,7 +47,7 @@ const Card = ({ page }) => {
                             </div>
                         </div>
                         <div className="cardFooter">
-                            <Button variant="contained" color="primary" fullWidth >
+                            <Button variant="contained" color="success" sx={{ color: "white" }} fullWidth href={`cari-mobil/detail/:id`}>
                                 Pilih Mobil
                             </Button>
                         </div>
@@ -66,11 +66,11 @@ const Card = ({ page }) => {
                                 fontWeight: 'bold',
                             }}> Rp. car.price / hari </Typography>
                             <div className="cardTime">
-                                <Typography className='time' mb={.5}>
+                                <Typography className='time' mb={1}>
                                     <KeyIcon className='icon-btn' />
                                     car.startRent - car.finishRent
                                 </Typography>
-                                <Typography className='time' mb={.5}>
+                                <Typography className='time' mb={1}>
                                     <AccessTimeIcon className='icon-btn' />
                                     Updated at car.update.seconds
                                 </Typography>

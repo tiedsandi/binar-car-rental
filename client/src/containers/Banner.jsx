@@ -10,7 +10,7 @@ const Banner = () => {
             borderRadius: "1rem",
 
         }} >
-            <Typography variant="h4" mb="1rem">
+            <Typography variant="h4" mb="1rem" sx={{ fontWeight: 'bold' }}>
                 Sewa Mobil di (Lokasimu) Sekarang
             </Typography>
             <Box sx={{
@@ -23,7 +23,7 @@ const Banner = () => {
                 </Typography>
             </Box>
 
-            <Button variant="contained" color="primary" >
+            <Button variant="contained" color="success" sx={{ color: "white" }}  >
                 Mulai Sewa Mobil
             </Button>
         </Box>

@@ -4,7 +4,8 @@ import {
   Route,
   // Navigate,
 } from "react-router-dom";
-
+import { ThemeProvider } from '@mui/material'
+import { Theme } from './Theme';
 import './App.css';
 
 import Home from "./pages/Home";
@@ -26,40 +27,42 @@ import Tiket from "./pages/user/Tiket";
 
 function App() {
   return (
-    <div className="App">
-      <Router>
-        <Routes>
-          <Route path="/" >
-            <Route index element={<Home />} />
-            <Route path="login" element={<Login />} />
-            <Route path="register" element={<Register />} />
-          </Route>
-
-          {/* Admin */}
-          <Route path="/dashboard">
-            <Route index element={<Dashboard />} />
-            <Route path="user" element={<UserDashboard />} />
-            <Route path="cars">
-              <Route index element={<CarsList />} />
-              <Route path="edit/:id" element={<EditCar />} />
-              <Route path="new" element={<NewCar />} />
+    <ThemeProvider theme={Theme}>
+      <div className="App">
+        <Router>
+          <Routes>
+            <Route path="/" >
+              <Route index element={<Home />} />
+              <Route path="login" element={<Login />} />
+              <Route path="register" element={<Register />} />
             </Route>
-          </Route>
 
-          {/* User */}
-          <Route path="/cari-mobil">
-            <Route index element={<CariMobil />} />
-            <Route path="detail/:id" element={<DetailMobil />} />
-            <Route path="metode-pembayaran" element={<MetodePembayaran />} />
-            <Route path="pembayaran" element={<Pembayaran />} />
-            <Route path="tiket/:idTicket" element={<Tiket />} />
-          </Route>
+            {/* Admin */}
+            <Route path="/dashboard">
+              <Route index element={<Dashboard />} />
+              <Route path="user" element={<UserDashboard />} />
+              <Route path="cars">
+                <Route index element={<CarsList />} />
+                <Route path="edit/:id" element={<EditCar />} />
+                <Route path="new" element={<NewCar />} />
+              </Route>
+            </Route>
 
-          {/* NotFound */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Router>
-    </div>
+            {/* User */}
+            <Route path="/cari-mobil">
+              <Route index element={<CariMobil />} />
+              <Route path="detail/:id" element={<DetailMobil />} />
+              <Route path="metode-pembayaran" element={<MetodePembayaran />} />
+              <Route path="pembayaran" element={<Pembayaran />} />
+              <Route path="tiket/:idTicket" element={<Tiket />} />
+            </Route>
+
+            {/* NotFound */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Router>
+      </div>
+    </ThemeProvider >
   );
 }
 
