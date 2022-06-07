@@ -1,4 +1,5 @@
-import { Avatar, Box, Button, Link } from "@mui/material";
+import { Box, Button, Link } from "@mui/material";
+import MenuProfile from "./MenuProfile";
 import Nav from "./Nav";
 
 const Navbar = ({ page }) => {
@@ -20,7 +21,7 @@ const Navbar = ({ page }) => {
                         <Button component={Link} variant="contained" href="/register" color="success" sx={{ color: "white" }}>Register</Button>
                     </>
                     :
-                    <Avatar />
+                    <MenuProfile />
                 }
 
             </Box>

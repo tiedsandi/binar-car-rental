@@ -1,0 +1,15 @@
+.side-menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem;
+}
+
+.side-menu:hover {
+    cursor: pointer;
+    background-color: #CFD4ED;
+}
+
+.actived {
+    background-color: #CFD4ED;
+}
