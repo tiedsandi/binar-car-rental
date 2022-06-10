@@ -1,15 +1,35 @@
 import { Grid, Box, Typography, TextField, Button, Link } from '@mui/material'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+
+
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from '../firebase';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../context/AuthContext';
 
 const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState(false)
 
-    const handleSubmit = () => {
+    const navigate = useNavigate();
+
+    const { dispatch } = useContext(AuthContext);
+
+    const handleSubmit = (e) => {
         if (email === '' && password === '') {
             setError(true)
         }
+        e.preventDefault();
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                dispatch({ type: "LOGIN", payload: user })
+                navigate('/dashboard');
+            })
+            .catch((error) => {
+                setError(true)
+            });
     }
 
     return (

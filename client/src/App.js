@@ -2,8 +2,10 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  // Navigate,
+  Navigate,
 } from "react-router-dom";
+import { createContext, useContext, useState } from 'react';
+
 import { ThemeProvider } from '@mui/material'
 import { Theme } from './Theme';
 import './App.css';
@@ -25,43 +27,62 @@ import MetodePembayaran from "./pages/user/MetodePembayaran";
 import Pembayaran from "./pages/user/Pembayaran";
 import Tiket from "./pages/user/Tiket";
 
+import { AuthContext } from "./context/AuthContext";
+export const Data = createContext();
+
 function App() {
+
+  const [user, setUser] = useState(null);
+  const [data, setData] = useState([]);
+
+  const { currentUser } = useContext(AuthContext)
+
+  const RequireAuth = ({ children }) => {
+    return currentUser ? (children) : <Navigate to="/login" />;
+  };
+
+
   return (
     <ThemeProvider theme={Theme}>
-      <div className="App">
-        <Router>
-          <Routes>
-            <Route path="/" >
-              <Route index element={<Home />} />
-              <Route path="login" element={<Login />} />
-              <Route path="register" element={<Register />} />
-            </Route>
-
-            {/* Admin */}
-            <Route path="/dashboard">
-              <Route index element={<Dashboard />} />
-              <Route path="user" element={<UserDashboard />} />
-              <Route path="cars">
-                <Route index element={<CarsList />} />
-                <Route path="edit/:id" element={<EditCar />} />
-                <Route path="new" element={<NewCar />} />
+      <Data.Provider value={{ user, setUser, data, setData }}>
+        <div className="App">
+          <Router>
+            <Routes>
+              <Route path="/" >
+                <Route index element={<Home />} />
+                <Route path="login" element={<Login />} />
+                <Route path="register" element={<Register />} />
               </Route>
-            </Route>
 
-            {/* User */}
-            <Route path="/cari-mobil">
-              <Route index element={<CariMobil />} />
-              <Route path="detail/:id" element={<DetailMobil />} />
-              <Route path="metode-pembayaran" element={<MetodePembayaran />} />
-              <Route path="pembayaran" element={<Pembayaran />} />
-              <Route path="tiket/:idTicket" element={<Tiket />} />
-            </Route>
+              {/* Admin */}
+              <Route path="/dashboard">
+                <Route index element={
+                  <RequireAuth>
+                    <Dashboard />
+                  </RequireAuth>} />
+                <Route path="user" element={<RequireAuth><UserDashboard /> </RequireAuth>} />
+                <Route path="cars">
+                  <Route index element={<RequireAuth><CarsList /> </RequireAuth>} />
+                  <Route path="edit/:id" element={<RequireAuth><EditCar /> </RequireAuth>} />
+                  <Route path="new" element={<RequireAuth><NewCar /> </RequireAuth>} />
+                </Route>
+              </Route>
 
-            {/* NotFound */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Router>
-      </div>
+              {/* User */}
+              <Route path="/cari-mobil">
+                <Route index element={<RequireAuth><CariMobil /> </RequireAuth>} />
+                <Route path="detail/:id" element={<RequireAuth><DetailMobil /> </RequireAuth>} />
+                <Route path="metode-pembayaran" element={<RequireAuth><MetodePembayaran /> </RequireAuth>} />
+                <Route path="pembayaran" element={<RequireAuth><Pembayaran /> </RequireAuth>} />
+                <Route path="tiket/:idTicket" element={<RequireAuth><Tiket /> </RequireAuth>} />
+              </Route>
+
+              {/* NotFound */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Router>
+        </div>
+      </Data.Provider>
     </ThemeProvider >
   );
 }

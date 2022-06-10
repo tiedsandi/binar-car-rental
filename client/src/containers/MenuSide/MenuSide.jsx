@@ -17,11 +17,11 @@ const MenuSide = ({ page }) => {
             }}>
                 <img src={'/images/logoSmall.png'} alt="logo" />
             </Box>
-            <Link className={page === 'home' ? 'menu-btn active' : 'menu-btn'} underline={'none'} color={'white'}>
+            <Link className={page === 'home' ? 'menu-btn active' : 'menu-btn'} underline={'none'} color={'white'} href={'/dashboard'}>
                 <HomeOutlinedIcon />
                 <Typography variant={'body1'}>Home</Typography>
             </Link>
-            <Link className={page === 'cars' ? 'menu-btn active' : 'menu-btn'} underline={'none'} color={'white'}>
+            <Link className={page === 'cars' ? 'menu-btn active' : 'menu-btn'} underline={'none'} color={'white'} href={'/dashboard/cars'}>
                 <LocalShippingOutlinedIcon />
                 <Typography variant={'body1'}>Cars</Typography>
             </Link>

@@ -9,9 +9,24 @@ import MenuList from '@mui/material/MenuList';
 import { Avatar, Box } from '@mui/material';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
+import { auth } from "../firebase";
+import { signOut } from "firebase/auth";
+
 const MenuProfile = () => {
     const [open, setOpen] = React.useState(false);
     const anchorRef = React.useRef(null);
+
+    const { dispatch } = useContext(AuthContext);
+    const handleLogout = () => {
+        signOut(auth).then(() => {
+            dispatch({ type: "LOGOUT" });
+        }).catch((error) => {
+            // An error happened.
+        });
+    }
+
 
     const handleToggle = () => {
         setOpen((prevOpen) => !prevOpen);
@@ -88,7 +103,7 @@ const MenuProfile = () => {
                                     onKeyDown={handleListKeyDown}
                                 >
                                     <MenuItem onClick={moveToProfile}>Profile</MenuItem>
-                                    <MenuItem onClick={handleClose}>Logout</MenuItem>
+                                    <MenuItem onClick={handleLogout}>Logout</MenuItem>
                                 </MenuList>
                             </ClickAwayListener>
                         </Paper>

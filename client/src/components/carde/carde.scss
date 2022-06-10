@@ -1,0 +1,86 @@
+.card {
+    width: 340px;
+    aspect-ratio: 2;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(58, 20, 161, 0.2);
+    border-radius: 5px;
+    position: relative;
+
+    .icon-btn {
+        margin-right: .4rem;
+    }
+
+    .cardHeader {
+        display: flex;
+        // position: absolute;
+
+        .cardContentImage {
+            max-width: 360px;
+            height: 280px;
+
+            .carImg {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+        }
+    }
+
+    .cardContent {
+        margin: 1rem 0;
+
+        .cardTime {
+            margin-top: 0.5rem;
+
+            .time {
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+
+    .cardFooter {
+        display: flex;
+        justify-content: space-between;
+
+        .button {
+            width: 150px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            font-size: 16px;
+            border: 1px solid green;
+            border-radius: 5px;
+            background-color: green;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+
+            &:hover {
+                background-color: white;
+                color: green;
+            }
+        }
+
+        .delete {
+            border: 1px solid red;
+            color: red;
+            background-color: transparent;
+
+            &:hover {
+                background-color: red;
+                color: white;
+            }
+        }
+    }
+
+    &:hover {
+        box-shadow: 0 0 10px rgba(58, 20, 161, 0.5);
+    }
+}
+
+// <h5>{formatter.format(item.price)} / hari </h5>
